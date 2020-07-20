@@ -13,7 +13,7 @@ class ListStaffTest extends TestCase
      */
     public function testStaffList()
     {
-	$this->artisan('staff:list')
+        $this->artisan('staff:list')
             ->expectsOutput('Listing all staff')
             ->assertExitCode(0);
     }
@@ -25,11 +25,11 @@ class ListStaffTest extends TestCase
      */
     public function testStaffExport()
     {
-	$this->artisan('staff:export')
+        $this->artisan('staff:export')
             ->expectsOutput('Exporting all staff and salaries')
             ->assertExitCode(0);
 
-	$this->assertTrue(Filesystem::exists('staff-export.csv'));
+        $this->assertTrue(Filesystem::exists('staff-export.csv'));
     }
 
     /**
@@ -39,7 +39,7 @@ class ListStaffTest extends TestCase
      */
     public function testStaffFind()
     {
-	$this->artisan('staff:find Julie')
+        $this->artisan('staff:find Julie')
             ->expectsOutput('Julie Walter')
             ->assertExitCode(0);
     }
